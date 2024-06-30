@@ -4,10 +4,10 @@ namespace App\Livewire\Admin\Product;
 
 use Livewire\Component;
 
-class FormModal extends Component
+class Products extends Component
 {
     public function render()
     {
-        return view('livewire.admin.product.form-modal');
+        return view('livewire.admin.product.products');
     }
 }
