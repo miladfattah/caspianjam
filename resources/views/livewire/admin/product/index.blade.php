@@ -57,7 +57,7 @@
                             </button>
                         </div>
                         <!-- Modal body -->
-                        <form class="p-4 md:p-5">
+                        <form class="p-4 md:p-5" wire:submit="createProduct">
                             <div class="grid gap-4 mb-4 grid-cols-2">
                                 <div class="col-span-2">
                                     <label
@@ -66,6 +66,7 @@
                                         >Name</label
                                     >
                                     <input
+                                        wire:model="name"
                                         type="text"
                                         name="name"
                                         id="name"
@@ -81,6 +82,7 @@
                                         >Price</label
                                     >
                                     <input
+                                        wire:model="price"
                                         type="number"
                                         name="price"
                                         id="price"
@@ -91,24 +93,109 @@
                                 </div>
                                 <div class="col-span-2 sm:col-span-1">
                                     <label
-                                        for="category"
+                                        for="country"
                                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                        >Category</label
+                                        >Country</label
                                     >
                                     <select
-                                        id="category"
+                                        wire:model="country"
+                                        id="country"
                                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                     >
                                         <option selected="">
-                                            Select category
+                                            Select Country
                                         </option>
-                                        <option value="TV">TV/Monitors</option>
-                                        <option value="PC">PC</option>
-                                        <option value="GA">
-                                            Gaming/Console
-                                        </option>
-                                        <option value="PH">Phones</option>
+                                        <option value="iran">Iran</option>
+                                        <option value="turkey">Turkey</option>
+                                        <option value="qatar">Qatar</option>
+                                        <option value="uma">UMA</option>
                                     </select>
+                                </div>
+                                <div class="col-span-2 sm:col-span-1">
+                                    <label
+                                        for="quantity"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                        >Quantity</label
+                                    >
+                                    <input
+                                        wire:model="quantity"
+                                        type="number"
+                                        name="quantity"
+                                        id="quantity"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                        placeholder="1"
+                                        required=""
+                                    />
+                                </div>
+                                <div class="col-span-2 sm:col-span-1">
+                                    <label
+                                        for="tag"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                        >Tag</label
+                                    >
+                                    <input
+                                        wire:model="tag"
+                                        type="text"
+                                        name="tag"
+                                        id="tag"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                        placeholder="Type product Tag"
+                                        required=""
+                                    />
+                                </div>
+                                <div class="col-span-2 sm:col-span-1">
+                                    <label
+                                        for="weight"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                        >Weight</label
+                                    >
+                                    <input
+                                        wire:model="weight"
+                                        type="number"
+                                        name="weight"
+                                        id="quantity"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                        placeholder="1 kg"
+                                        required=""
+                                    />
+                                </div>
+                                <div class="col-span-2 sm:col-span-1">
+                                    <label
+                                        for="brand"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                        >Brand</label
+                                    >
+                                    <input
+                                        wire:model="brand"
+                                        type="text"
+                                        name="brand"
+                                        id="brand"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                        placeholder="Type product brand"
+                                        required=""
+                                    />
+                                </div>
+                                <div class="col-span-2 sm:col-span-1">
+                                    <label
+                                        for="flavor"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                        >Flavor</label
+                                    >
+                                    <input
+                                        wire:model="flavor"
+                                        type="text"
+                                        name="flavor"
+                                        id="flavor"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                        placeholder="Type product flavor"
+                                        required=""
+                                    />
+                                </div>
+                                <div class="col-span-2 sm:col-span-1">
+                                 
+                                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="multiple_files">Upload multiple files</label>
+                                    <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="multiple_files" type="file" multiple>
+
                                 </div>
                                 <div class="col-span-2">
                                     <label
@@ -117,6 +204,7 @@
                                         >Product Description</label
                                     >
                                     <textarea
+                                        wire:model="description"
                                         id="description"
                                         rows="4"
                                         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -152,7 +240,7 @@
             </div>
         </div>
     
-        <livewire:admin.products.product />
+        <livewire:admin.product.products />
   
     </div>
 </x-app-layout>
